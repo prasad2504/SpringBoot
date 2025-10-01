@@ -14,6 +14,16 @@ public class Movie {
 	}
 
 	
+	
+	public Movie(String name, String collection, double rating) {
+		super();
+		this.name = name;
+		this.collection = collection;
+		this.rating = rating;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "Movie [name=" + name + ", collection=" + collection + ", rating=" + rating + "]";
