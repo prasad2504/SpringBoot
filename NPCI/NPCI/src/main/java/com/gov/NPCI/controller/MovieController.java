@@ -52,11 +52,14 @@ public class MovieController {
 		
 		return service.Searchbyname(name);
 	}
+	
+	//we can write this above without ("name") also example below
 //	@PostMapping("/findmoviebyname")
 //	public List<Movie> findmovie(@RequestParam String name){
 //		
 //		return service.Searchbyname(name);
 //	}
+	
 	
 	//find movie using @PathVariable
 	@PostMapping("/findmovie/{var}")
