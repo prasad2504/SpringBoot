@@ -60,7 +60,7 @@ public class MovieController {
 //		return service.Searchbyname(name);
 //	}
 	
-	
+	//we cannot write the @PathVariable without that ("var") coz we want to pass that also in above curly bracket
 	//find movie using @PathVariable
 	@PostMapping("/findmovie/{var}")
 	public List<Movie> findmovie1(@PathVariable("var") String name2){
