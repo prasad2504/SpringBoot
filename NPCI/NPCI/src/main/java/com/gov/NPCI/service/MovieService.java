@@ -32,8 +32,7 @@ public class MovieService {
 		return "Not a good  movie";
 	}
 	
-	public List<Movie> showallmovie(){
-	
+	public List<Movie> AddMovies(){
 		List<Movie> list = Arrays.asList(new Movie("Inception","830 cr",9.0),
 				new Movie("Interstellar","715 cr",8.6),
 				new Movie("The Dark Knight","1005 cr",9.1),
@@ -58,17 +57,35 @@ public class MovieService {
 				new Movie("3 Idiots","460 cr",8.4),
 				new Movie("PK","740 cr",8.1),
 				new Movie("Dangal","3000 cr",8.4),
-				new Movie("Baahubali 2","1810 cr",8.2)
-);
-		
-		
+				new Movie("Bahubali2","1810 cr",8.2));
 		return list;
+		
 	}
+	
+	
+	public List<Movie> showallmovie(){
+	
+		List<Movie> list = AddMovies();
+		
+		return list.stream().collect(Collectors.toList());
+	}
+	
+	
 	
 	public List<Movie> DesOrder(){
 		
-		List<Movie> list =this.showallmovie();
+		List<Movie> list =AddMovies();
 		
 		return list.stream().sorted((i,j)->((int)j.rating-(int)i.rating)).collect(Collectors.toList());
+	}
+	
+	
+	
+	
+	public List<Movie> Searchbyname(String na){
+		List<Movie> list = AddMovies();
+		
+		return list.stream().filter((i)-> (i.name).equalsIgnoreCase(na)).collect(Collectors.toList());
+		
 	}
 }
