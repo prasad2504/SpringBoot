@@ -88,4 +88,21 @@ public class MovieService {
 		return list.stream().filter((i)-> (i.name).equalsIgnoreCase(na)).collect(Collectors.toList());
 		
 	}
+	
+	public List<Movie> Searchbyrating(double rat){
+		
+		List<Movie> list = AddMovies();
+		
+		return list.stream().filter((i)->(i.rating==rat)).sorted( (i,j)->((int)j.rating-(int)i.rating) ).collect(Collectors.toList());
+	}
+	
+	
+	public List<Movie> SearchByNameAndRat(String name,double rat){
+		
+		List<Movie> list = AddMovies();
+		
+		return list.stream().filter( (i)->(i.name).equalsIgnoreCase(name) && (i.rating==rat)).collect(Collectors.toList());
+	}
+	
+	
 }

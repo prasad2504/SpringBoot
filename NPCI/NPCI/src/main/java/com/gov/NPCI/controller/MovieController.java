@@ -53,14 +53,18 @@ public class MovieController {
 		return service.Searchbyname(name);
 	}
 	
-	//we can write this above without ("name") also example below
+
+
+//	we can write this above without ("name") also example below
 //	@PostMapping("/findmoviebyname")
 //	public List<Movie> findmovie(@RequestParam String name){
 //		
 //		return service.Searchbyname(name);
 //	}
 	
-	//we cannot write the @PathVariable without that ("var") coz we want to pass that also in above curly bracket
+	
+	
+	
 	//find movie using @PathVariable
 	@PostMapping("/findmovie/{var}")
 	public List<Movie> findmovie1(@PathVariable("var") String name2){
@@ -68,5 +72,23 @@ public class MovieController {
 		return service.Searchbyname(name2);
 	}
 	
+//		we can write this above without ("var") also example below
+//		public List<Movie> findmovie1(@PathVariable("var") String name2){
+//		
+//		return service.Searchbyname(name2);
+//	}
+	
+	@PostMapping("/findbyrating/{rat}")
+	public List<Movie> findbyrating(@PathVariable("rat") double rating){
+		
+		return service.Searchbyrating(rating);
+	}
+	
+	
+	@PostMapping("/findbynameandrating/{name}/{rat}")
+	public List<Movie> findbyratandname(@PathVariable String name , @PathVariable double rat){
+		
+		return service.SearchByNameAndRat(name, rat);
+	}
 
 }
