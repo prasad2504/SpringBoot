@@ -103,7 +103,7 @@ public class MovieController {
 	}
 	
 	
-	//controller using @requestbody 
+	//controller using @requestbody in this
 	@PostMapping("/addmovie")
 	public List<Movie> addMovie(@RequestBody Movie movie) {
 		
