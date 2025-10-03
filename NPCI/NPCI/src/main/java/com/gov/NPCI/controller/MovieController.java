@@ -95,11 +95,15 @@ public class MovieController {
 	//------------------------------------------adding movie------------------------------------------------------------------------------------
 
 	
+	
+	//controller using @requestparam 
 	@PostMapping("/addm")
 	public List<Movie> addm(@RequestParam String  name,@RequestParam String collection ,@RequestParam double rating){
 		return service.addmoive(name, collection, rating);
 	}
 	
+	
+	//controller using @requestbody 
 	@PostMapping("/addmovie")
 	public List<Movie> addMovie(@RequestBody Movie movie) {
 		
