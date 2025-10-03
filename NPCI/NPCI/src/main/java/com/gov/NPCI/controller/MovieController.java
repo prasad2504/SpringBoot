@@ -91,10 +91,17 @@ public class MovieController {
 		
 		return service.SearchByNameAndRat(name, rat);
 	}
+	
+	//------------------------------------------adding movie------------------------------------------------------------------------------------
 
 	
+	@PostMapping("/addm")
+	public List<Movie> addm(@RequestParam String  name,@RequestParam String collection ,@RequestParam double rating){
+		return service.addmoive(name, collection, rating);
+	}
+	
 	@PostMapping("/addmovie")
-	public String addMovie(@RequestBody Movie movie) {
+	public List<Movie> addMovie(@RequestBody Movie movie) {
 		
 		return service.AddMovie(movie);
 	}

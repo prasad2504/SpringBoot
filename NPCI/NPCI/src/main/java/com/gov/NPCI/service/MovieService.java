@@ -108,19 +108,31 @@ public class MovieService {
 	
 	//adding movie using @requestparam or @pathvariable makes our url unreadable and long so better to use @requestbody.
 	
+	public List<Movie> addmoive(String name,String collection,double rating){
+		
+		List<Movie> l2 = AddMovies().stream().collect(Collectors.toList());
+		
+			l2.add(new Movie(name,collection,rating));
+			
+		System.out.println(l2);
+		
+	return l2;	
+	}
+	
 	
 	
 	
 	
 	//adding movie using @requestbody annotation
-	public String AddMovie(Movie movie) {
+	public List<Movie> AddMovie(Movie movie) {
 		
 		List<Movie> l1= AddMovies().stream().collect(Collectors.toList());
 		
 		l1.add(movie);
+		
 		System.out.println(l1);
 		
-		return "Movie added  : " +movie;
+		return l1;
 	}
 	
 	
