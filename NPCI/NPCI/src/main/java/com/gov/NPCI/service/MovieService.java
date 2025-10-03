@@ -104,5 +104,24 @@ public class MovieService {
 		return list.stream().filter( (i)->(i.name).equalsIgnoreCase(name) && (i.rating==rat)).collect(Collectors.toList());
 	}
 	
+//------------------------------------------adding movie------------------------------------------------------------------------------------
+	
+	//adding movie using @requestparam or @pathvariable makes our url unreadable and long so better to use @requestbody.
+	
+	
+	
+	
+	
+	//adding movie using @requestbody annotation
+	public String AddMovie(Movie movie) {
+		
+		List<Movie> l1= AddMovies().stream().collect(Collectors.toList());
+		
+		l1.add(movie);
+		System.out.println(l1);
+		
+		return "Movie added  : " +movie;
+	}
+	
 	
 }
