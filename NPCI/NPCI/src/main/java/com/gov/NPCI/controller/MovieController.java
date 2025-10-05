@@ -24,6 +24,7 @@ public class MovieController {
 	public String getdet() {
 		
 	return	service.showdet();
+	//
 	 
 	}
 
