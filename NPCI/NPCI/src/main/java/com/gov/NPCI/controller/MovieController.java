@@ -30,6 +30,7 @@ public class MovieController {
 	@GetMapping("/get-allmovies")
 	public List<Movie> getallMovie(){
 		return service.showallmovie();
+		//
 	}
 	
 	
