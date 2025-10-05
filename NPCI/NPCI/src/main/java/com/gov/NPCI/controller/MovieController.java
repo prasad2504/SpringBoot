@@ -24,14 +24,13 @@ public class MovieController {
 	public String getdet() {
 		
 	return	service.showdet();
-	//
-	 
+	
 	}
 
 	@GetMapping("/get-allmovies")
 	public List<Movie> getallMovie(){
 		return service.showallmovie();
-		//
+		
 	}
 	
 	
