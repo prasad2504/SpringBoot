@@ -3,6 +3,8 @@ package com.Pragati_publication.Pune_Publication.Service;
 
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,6 +39,10 @@ public class BookService {
 	    
 	    return  book_saved;
 	}  
+	
+	public List<Book> getbook(){
+		return repo.findAll();
+	}
 
 
 }

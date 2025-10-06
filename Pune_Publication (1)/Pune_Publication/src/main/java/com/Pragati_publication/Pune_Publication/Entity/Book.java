@@ -2,9 +2,9 @@ package com.Pragati_publication.Pune_Publication.Entity;
 
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Book {
@@ -18,6 +18,23 @@ public class Book {
 	private double price;
 	private double ratings;
 	
+	
+	@JoinColumn
+	@OneToOne
+	private Author author;
+	
+	
+
+	public Author getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(Author author) {
+		this.author = author;
+	}
+
+	
+
 	public int getId() {
 		return id;
 	}
