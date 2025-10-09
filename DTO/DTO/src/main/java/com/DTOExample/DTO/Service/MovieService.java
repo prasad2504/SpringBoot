@@ -31,6 +31,11 @@ public class MovieService {
 	public Movie getmoviee(int id) {
 		return repo.findById(id).get();
 	}
+
+//	----sql
 	
+	public void deletebyid(int id) {
+		 repo.deleteById(id);
+	}
 	
 }
