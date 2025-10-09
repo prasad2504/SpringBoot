@@ -2,6 +2,8 @@ package com.Pragati_publication.Pune_Publication.Entity;
 
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
@@ -11,7 +13,7 @@ public class Book {
 
 	
 	@Id
-	
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
 	private String name;
@@ -19,19 +21,19 @@ public class Book {
 	private double ratings;
 	
 	
-	@JoinColumn
-	@OneToOne
-	private Author author;
-	
-	
-
-	public Author getAuthor() {
-		return author;
-	}
-
-	public void setAuthor(Author author) {
-		this.author = author;
-	}
+//	@JoinColumn
+//	@OneToOne
+//	private Author author;
+//	
+//	
+//
+//	public Author getAuthor() {
+//		return author;
+//	}
+//
+//	public void setAuthor(Author author) {
+//		this.author = author;
+//	}
 
 	
 

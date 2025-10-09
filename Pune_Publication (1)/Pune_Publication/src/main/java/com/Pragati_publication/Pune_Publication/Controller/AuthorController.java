@@ -27,7 +27,7 @@ public class AuthorController {
 	}
 	
 	
-	@GetMapping
+	@GetMapping("/get-author")
 	public List<Author> getauthor() throws Exception{
 		
 		return service.getallauthor();

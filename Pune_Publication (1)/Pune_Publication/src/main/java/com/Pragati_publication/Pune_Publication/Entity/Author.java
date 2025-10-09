@@ -1,9 +1,13 @@
 package com.Pragati_publication.Pune_Publication.Entity;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Author {
@@ -14,6 +18,28 @@ public class Author {
 	private String authorName;
 	private String email;
 	
+	
+	@JoinColumn
+	@OneToMany
+	private List<Book> books;
+	
+	
+	
+	public List<Book> getBooks() {
+		return books;
+	}
+	
+	public void setBooks(List<Book> books) {
+		this.books = books;
+	}
+	
+	public Author(int id, String authorName, String email, List<Book> books) {
+		super();
+		this.id = id;
+		this.authorName = authorName;
+		this.email = email;
+		this.books = books;
+	}
 	
 	public int getId() {
 		return id;
