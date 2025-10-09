@@ -46,7 +46,7 @@ public class ActorController {
 //	----------------------------------------sql
 	
 	
-//	hard code 
+//	hard code for one api
 //	@GetMapping("/get-by-name")
 //	public List<Actor> getbynamee(){
 //		return service.findbyname();
