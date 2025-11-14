@@ -24,6 +24,7 @@ public class MovieService {
 	//2
 	public List<Movie> getmovie(){
 		return repo.findAll();
+		
 	}
 	
 	

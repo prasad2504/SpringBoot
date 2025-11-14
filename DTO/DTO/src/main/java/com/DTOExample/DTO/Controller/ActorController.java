@@ -3,6 +3,8 @@ package com.DTOExample.DTO.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +20,7 @@ import com.DTOExample.DTO.Service.ActorService;
 
 @RestController
 @RequestMapping("/actor-controller")
+@CrossOrigin(allowedHeaders = "http://localhost:5174/")
 public class ActorController {
 
 	
@@ -33,6 +36,7 @@ public class ActorController {
 	
 	
 	@GetMapping("/get-actors")
+
 	public List<Actor> getactorr(){
 		return service.getactor();
 	}

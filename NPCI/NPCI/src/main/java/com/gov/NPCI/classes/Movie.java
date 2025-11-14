@@ -1,5 +1,7 @@
 package com.gov.NPCI.classes;
 
+import java.io.Serializable;
+
 import org.springframework.stereotype.Component;
 
 @Component

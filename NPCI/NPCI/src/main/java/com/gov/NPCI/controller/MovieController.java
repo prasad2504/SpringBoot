@@ -3,6 +3,7 @@ package com.gov.NPCI.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,7 +29,14 @@ public class MovieController {
 	}
 
 	@GetMapping("/get-allmovies")
-	public List<Movie> getallMovie(){
+	@Cacheable(value="movies")
+	public List<Movie> getallMovie() throws InterruptedException{
+		
+		
+		Thread.sleep(3000);
+		
+		System.out.println("going to database to fetch data");
+		
 		return service.showallmovie();
 		
 	}

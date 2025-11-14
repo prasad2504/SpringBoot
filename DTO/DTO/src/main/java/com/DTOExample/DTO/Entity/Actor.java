@@ -1,9 +1,11 @@
 package com.DTOExample.DTO.Entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -11,7 +13,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 
 @Entity
-public class Actor {
+public class Actor implements Serializable {
 	
 	
 	@Id
@@ -26,9 +28,10 @@ public class Actor {
 	
 	
 	@JoinColumn
-	@OneToMany
+	@OneToMany(fetch=FetchType.EAGER)
+	@Column(nullable=false)
 	private List<Movie> movies;
-	
+
 	
 
 	public List<Movie> getMovies() {
