@@ -62,9 +62,9 @@ public class Car {
 		CarEngine = carEngine;
 	}
 	
-	
+
 	@JoinColumn
-	@ManyToOne()
+	@ManyToOne
 	private Company company;
 
 	public Company getCompany() {

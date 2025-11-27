@@ -1,11 +1,14 @@
 package com.Car.car.Entity;
 
+import java.util.List;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 
 @Entity
@@ -97,6 +100,29 @@ public class Company {
 	}
 	
 	
+	
+	@OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
+	private List<Car> cars;
+
+	public List<Car> getCars() {
+		return cars;
+	}
+
+	public void setCars(List<Car> cars) {
+		this.cars = cars;
+	}
+
+	public Company(int companyId, String companyName, double companyValuation, Ceo ceo, Headquarter hq,
+			List<Car> cars) {
+	
+		CompanyId = companyId;
+		CompanyName = companyName;
+		CompanyValuation = companyValuation;
+		this.ceo = ceo;
+		this.hq = hq;
+		this.cars = cars;
+	}
+
 	
 	
 	
